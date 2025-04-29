@@ -53,6 +53,9 @@
 		delete keysPressed[ event.key ];
 	});
 
+	// Get & set the taskName
+	document.querySelector( '.task' ).innerText = localStorage.getItem( 'taskName' );
+
 </script>
 </body>
 </html>
