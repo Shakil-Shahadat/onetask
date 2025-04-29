@@ -55,7 +55,24 @@
 	});
 
 	// Get & set the taskName
-	document.querySelector( '.task' ).innerText = localStorage.getItem( 'taskName' );
+	if ( localStorage.getItem( 'taskName' ) === null )
+	{
+		// Get the taskName
+		taskName = prompt( 'Please enter the task name.' );
+
+		if ( taskName !== null )
+		{
+			// Set the task to taskName
+			document.querySelector( '.task' ).innerText = taskName;
+
+			// Store the taskName to localStorage
+			localStorage.setItem( 'taskName', taskName );
+		}
+	}
+	else
+	{
+		document.querySelector( '.task' ).innerText = localStorage.getItem( 'taskName' );
+	}
 
 </script>
 </body>
