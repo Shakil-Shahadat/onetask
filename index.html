@@ -33,33 +33,6 @@
 		localStorage.setItem( 'taskName', document.querySelector( '.task' ).innerText );
 	}
 
-	// Detect multiple key press event
-	let keysPressed = {};
-	let taskName = '';
-
-	document.addEventListener( 'keydown', ( event ) => {
-		keysPressed[ event.key ] = true;
-
-		if ( keysPressed[ 'Control' ] && event.key == 'q' ) {
-
-			// Get the taskName
-			taskName = prompt( 'Please enter the task name.' );
-
-			if ( taskName !== null )
-			{
-				// Set the task to taskName
-				document.querySelector( '.task' ).innerText = taskName;
-
-				// Store the taskName to localStorage
-				localStorage.setItem( 'taskName', taskName );
-			}
-		}
-	});
-
-	document.addEventListener( 'keyup', ( event ) => {
-		delete keysPressed[ event.key ];
-	});
-
 	// Get & set the taskName
 	if ( localStorage.getItem( 'taskName' ) === null )
 	{
