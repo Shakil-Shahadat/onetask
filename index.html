@@ -27,6 +27,12 @@
 
 	'use strict';
 
+	function saveMe()
+	{
+		// Store the task to localStorage
+		localStorage.setItem( 'taskName', document.querySelector( '.task' ).innerText );
+	}
+
 	// Detect multiple key press event
 	let keysPressed = {};
 	let taskName = '';
