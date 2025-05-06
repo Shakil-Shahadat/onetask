@@ -29,7 +29,8 @@
 	}
 
 	// Get & set the taskName
-	if ( localStorage.getItem( 'taskName' ) === null || localStorage.getItem( 'taskName' ) === '\n' || localStorage.getItem( 'taskName' ) === '' )
+	let taskShown = localStorage.getItem( 'taskName' );
+	if ( taskShown === null || taskShown === '\n' || taskShown === '' )
 	{
 		document.querySelector( '.task' ).innerText = 'Hello World!';
 	}
